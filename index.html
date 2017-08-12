@@ -1,0 +1,75 @@
+<!-- Justin Weber -->
+<!-- Line 23 is my static property -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 2 - Prototype Design Pattern (JS - ES5)</title>
+
+    <!-- Stylesheets -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="./src/css/main.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Assignment 2 - Prototype Design Pattern - Employee Management and Weekly Calculator</h1>
+      <form id="dataForm">
+        <div class="form-group">
+          <label for="employerField">Employer (static):</label>
+          <input type="text" class="form-control" id="employerField">
+        </div>
+        <div class="form-group">
+          <label for="employeeName">Employee Name:</label>
+          <input type="text" class="form-control" id="employeeName" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="employeeHours">Daily Hours (separated by spaces):</label>
+          <input type="text" class="form-control" id="employeeHours" placeholder="Hours">
+        </div>
+        <div class="form-group">
+          <label for="employeePosition">Title of Position:</label>
+          <input type="text" class="form-control" id="employeePosition" placeholder="Position">
+        </div>
+        <div class="form-group">
+          <label for="parkingSpotNumber">Parking Spot Number:</label>
+          <input type="text" class="form-control" id="parkingSpotNumber" placeholder="Parking Spot Number">
+        </div>
+        <button type="button" id="addBtn" class="btn btn-success">Add Employee</button>
+        <button type="button" id="calcBtn" class="btn btn-primary">Calculate Hours</button>
+      </form>
+
+      <!-- AssignPrototype.calculateTotals() -->
+
+      <table id="dataTable" class="table table-striped">
+        <thead>
+          <tr id="myRow">
+            <td>Name</td>
+            <td>Hours</td>
+            <td>AVG</td>
+            <td>Position</td>
+            <td>Parking #</td>
+            <td>Employer</td>
+          </tr>
+        </thead>
+
+        <tbody id="dataBody">
+
+        </tbody>
+      </table>
+
+      <div id="totalContainer"></div>
+    </div>
+
+
+    <script type="text/javascript" src="./src/js/jquery-3.2.1.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./src/js/utils.js"></script>
+    <script type="text/javascript" src="./src/js/main.js"></script>
+  </body>
+</html>
