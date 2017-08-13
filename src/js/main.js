@@ -99,12 +99,12 @@ class AssignPrototype {
 
 
     (function(){
-      var es5person = new ES5Person("Bob");
-      console.log(es5person.getHoursString());
+      //var es5person = new ES5Person("Bob");
+      //console.log(es5person.getHoursString());
 
-      var es5employee = new EmployeeES5("Scott", "Dev", "001");
-      console.log(es5employee);
-      console.log(es5employee.getParkingString());
+      //var es5employee = new EmployeeES5("Scott", "Dev", "001");
+      //console.log(es5employee);
+      //console.log(es5employee.getParkingString());
     })();
 
 
@@ -188,6 +188,7 @@ class AssignPrototype {
 
     // Creating function to print employees to the table when Calculate Totals Btn is pressed.
     function calculateTotals() {
+      var hourInts;
       var totalContainer = document.getElementById("totalContainer");
       // Creating a new div.
       var totalText = "<div>";
@@ -199,9 +200,16 @@ class AssignPrototype {
       for( var i = 0; i < employees.length; i++ ) {
         currentPersonOrEmployee = employees[i];
 
-        // Calling my Utils class convertToIntArray function and passing it each
-        // employee. Then saving the value to my hourInts variable.
-        hourInts = Utils.convertToIntArray(currentPersonOrEmployee);
+        //
+        //
+        if (currentPersonOrEmployee instanceof EmployeeES5) {
+
+          // Calling my Utils class convertToIntArray function and passing it a
+          // employee. Then setting the value to the hourInts variable
+          hourInts = Utils.convertToIntArray(currentPersonOrEmployee);
+        } else {
+          hourInts = [];
+        }
 
         // Calling my Utils class getTotalHours function and passing it my hours as
         // ints. Then adding the value to my hourTotal variable.
@@ -226,9 +234,15 @@ class AssignPrototype {
       for( var i = 0; i < employees.length; i++ ) {
         currentPersonOrEmployee = employees[i];
 
-        // Calling my Utils class convertToIntArray function and passing it a
-        // employee. Then setting the value to the hourInts variable
-        hourInts = Utils.convertToIntArray(currentPersonOrEmployee);
+        //
+        if (currentPersonOrEmployee instanceof EmployeeES5) {
+
+          // Calling my Utils class convertToIntArray function and passing it a
+          // employee. Then setting the value to the hourInts variable
+          hourInts = Utils.convertToIntArray(currentPersonOrEmployee);
+        } else {
+          hourInts = [];
+        }
 
         // Creating a table row to hold the new data/cells
         var row = document.createElement("tr");

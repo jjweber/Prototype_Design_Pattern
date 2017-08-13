@@ -39,22 +39,17 @@ class Utils {
   /* Method that takes in a created person or employee and converts the hours array
   to a numbers array. */
   static convertToIntArray(personOrEmployee) {
-    // Checks weather personOrEmployee is an instance of my Employee class and not a Person.
-    if(personOrEmployee instanceof EmployeeES5) {
-      // Getting the hours from the employee and saving it to my hoursString variable.
-      var hoursString = personOrEmployee.position.hours;
-      // Spliting the string up by spaces.
-      var temp = hoursString.split(' ');
 
-      // Looping through each of the parts of the split string and replacing it with a number.
-      temp.forEach((el, index) => {
-        el = Number(el);
-        temp[index] = el;
-      });
-      return temp;
-    }
-    else {
-      return [];
-    }
+    // Getting the hours from the employee and saving it to my hoursString variable.
+    var hoursString = personOrEmployee.position.hours;
+    // Spliting the string up by spaces.
+    var temp = hoursString.split(' ');
+
+    // Looping through each of the parts of the split string and replacing it with a number.
+    temp.forEach((el, index) => {
+      el = Number(el);
+      temp[index] = el;
+    });
+    return temp;
   }
 }
